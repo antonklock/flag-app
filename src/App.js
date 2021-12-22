@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import FlagDisplay from './components/FlagDisplay';
+import flags from './tools/flags';
+import getRandomKey from './tools/getRandomKey';
+import AnswerButtons from './components/AnswerButtons';
 
 function App() {
+  const [flagDisplay, setFlagDisplay] = useState({});
+  const [alternatives, setAlternatives] = useState([]);
+
+  useEffect(() => {
+    setFlagDisplay(getRandomKey(flags));
+  }, [])
+
+  useEffect(()=> {
+    const altOne = getRandomKey(flags).flagName;
+    const altTwo = getRandomKey(flags).flagName;
+    const altThree = getRandomKey(flags).flagName;
+    const altFour = flagDisplay.flagName;
+
+    const shuffledAlternatives = [altOne, altTwo, altThree, altFour]
+    .sort(()=> Math.random() - 0.5);
+
+    setAlternatives(shuffledAlternatives);
+  }, [flagDisplay]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Flag app</h1>
+      <FlagDisplay flag={flagDisplay} />
+      <AnswerButtons
+        alternatives={alternatives}
+        flagDisplay={flagDisplay}
+        setFlagDisplay={setFlagDisplay}
+      />
     </div>
   );
 }
