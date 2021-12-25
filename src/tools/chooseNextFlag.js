@@ -7,7 +7,6 @@ const chooseNextFlag = (currentFlag) => {
     if(wrongGuessFlags.length <= 0 || wrongGuessFlags[0] === currentFlag){
         loadRandomFlag = 1;
     }
-    console.log(loadRandomFlag);
     if(loadRandomFlag){
         return () => {
             let newFlag = null;
