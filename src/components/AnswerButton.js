@@ -1,28 +1,20 @@
 import handleGuess from '../tools/handleGuess';
 
-const AnswerButton = ({
-    alternatives,
-    alternative,
-    flagDisplay,
-    setFlagDisplay,
-    setShowCorrectGuess,
-    isButtonDisabled,
-    setIsButtonDisabled
-}) => (
+const AnswerButton = ({ propsLink, alternative }) => (
     <>
         <button
             onClick={() => {
                 handleGuess(
-                    alternatives,
+                    propsLink.alternatives,
                     alternative,
-                    flagDisplay.flagName,
-                    setFlagDisplay,
-                    setShowCorrectGuess,
-                    isButtonDisabled,
-                    setIsButtonDisabled
+                    propsLink.flagDisplay.flagName,
+                    propsLink.setFlagDisplay,
+                    propsLink.setShowCorrectGuess,
+                    propsLink.isButtonDisabled,
+                    propsLink.setIsButtonDisabled
                     );
             }}
-            disabled={ isButtonDisabled[alternatives.indexOf(alternative)] }
+            disabled={ propsLink.isButtonDisabled[propsLink.alternatives.indexOf(alternative)] }
         >
             {alternative}
         </button>
