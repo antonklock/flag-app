@@ -8,6 +8,8 @@ import AnswerButtons from './components/AnswerButtons';
 function App() {
   const [flagDisplay, setFlagDisplay] = useState({});
   const [alternatives, setAlternatives] = useState([]);
+  const [showCorrectGuess, setShowCorrectGuess] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState([false, false, false, false]);
 
   useEffect(() => {
     setFlagDisplay(getRandomKey(flags));
@@ -23,16 +25,23 @@ function App() {
     .sort(()=> Math.random() - 0.5);
 
     setAlternatives(shuffledAlternatives);
+    setIsButtonDisabled([false, false, false, false]);
   }, [flagDisplay]);
 
   return (
     <div className="App">
       <h1>Flag app</h1>
-      <FlagDisplay flag={flagDisplay} />
+      <FlagDisplay
+        flag={flagDisplay}
+        showCorrectGuess={showCorrectGuess}
+      />
       <AnswerButtons
-        alternatives={alternatives}
-        flagDisplay={flagDisplay}
-        setFlagDisplay={setFlagDisplay}
+        alternatives={ alternatives }
+        flagDisplay={ flagDisplay }
+        setFlagDisplay={ setFlagDisplay }
+        setShowCorrectGuess={ setShowCorrectGuess }
+        isButtonDisabled={ isButtonDisabled }
+        setIsButtonDisabled={ setIsButtonDisabled }
       />
     </div>
   );

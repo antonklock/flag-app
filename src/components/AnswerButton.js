@@ -1,11 +1,28 @@
 import handleGuess from '../tools/handleGuess';
 
-const AnswerButton = ({alternative, flagDisplay, setFlagDisplay}) => (
+const AnswerButton = ({
+    alternatives,
+    alternative,
+    flagDisplay,
+    setFlagDisplay,
+    setShowCorrectGuess,
+    isButtonDisabled,
+    setIsButtonDisabled
+}) => (
     <>
         <button
             onClick={() => {
-                handleGuess(alternative, flagDisplay.flagName, setFlagDisplay);
+                handleGuess(
+                    alternatives,
+                    alternative,
+                    flagDisplay.flagName,
+                    setFlagDisplay,
+                    setShowCorrectGuess,
+                    isButtonDisabled,
+                    setIsButtonDisabled
+                    );
             }}
+            disabled={ isButtonDisabled[alternatives.indexOf(alternative)] }
         >
             {alternative}
         </button>
