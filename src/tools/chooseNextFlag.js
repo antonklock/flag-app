@@ -9,16 +9,14 @@ const chooseNextFlag = (currentFlag) => {
     }
     console.log(loadRandomFlag);
     if(loadRandomFlag){
-        console.log('randomFlag');
         return () => {
             let newFlag = null;
             do{
                 newFlag = getRandomKey(flags);
-            } while (newFlag === currentFlag.flagName);
+            } while (newFlag === currentFlag);
             return newFlag;
         } 
     } else {
-        console.log('wrongGuessFlags');
         const wrongGuessFlag = wrongGuessFlags[0];
         wrongGuessFlags.shift();
         return () => {
