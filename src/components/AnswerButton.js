@@ -11,7 +11,8 @@ const AnswerButton = ({ propsLink, alternative }) => (
                     propsLink.setFlagDisplay,
                     propsLink.setShowCorrectGuess,
                     propsLink.isButtonDisabled,
-                    propsLink.setIsButtonDisabled
+                    propsLink.setIsButtonDisabled,
+                    propsLink.filteredFlags
                     );
             }}
             disabled={ propsLink.isButtonDisabled[propsLink.alternatives.indexOf(alternative)] }

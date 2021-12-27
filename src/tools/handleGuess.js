@@ -7,12 +7,13 @@ const handleGuess = (
     setFlagDisplay,
     setShowCorrectGuess,
     isButtonDisabled,
-    setIsButtonDisabled
+    setIsButtonDisabled,
+    filteredFlags
     ) => {
     if(alternative === flagName){
         setShowCorrectGuess(true);
         setTimeout(() => {
-            setFlagDisplay(chooseNextFlag(flagName));
+            setFlagDisplay(chooseNextFlag(filteredFlags, flagName));
             setShowCorrectGuess(false);
         }, 1000)
     } else {
