@@ -6,7 +6,7 @@ import TopBar from './components/TopBar';
 
 function App() {
   const [gameMode, setGameMode] = useState('none');
-  const [flagFilters, setFlagFilters] = useState({type: ['letter', 'number', 'sweLetter']});
+  const [flagFilters, setFlagFilters] = useState({type: ['letter', 'number']});
 
   const gameComponent = () => {
     switch (gameMode){
@@ -24,7 +24,6 @@ function App() {
   return (
     <div className="App">
       <TopBar />
-      <h1>Flag app</h1>
       { gameComponent() }
     </div>
   );

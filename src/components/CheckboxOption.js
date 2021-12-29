@@ -1,3 +1,5 @@
+import Typography from '@mui/material/Typography';
+
 const CheckboxOption = ({
     type,
     isChecked,
@@ -26,7 +28,11 @@ const CheckboxOption = ({
                         setCanPlay( checkAmountOfFlagGroups() );
                     }}
                 />
-                <label htmlFor={ type }> { type }</label>
+                <label htmlFor={ type }>
+                    <Typography variant="subtitle">
+                        { type }
+                    </Typography>    
+                </label>
         </div>
     );
 };

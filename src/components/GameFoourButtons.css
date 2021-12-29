@@ -1,0 +1,36 @@
+.GameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.GameContainer .flagDisplayContainer {
+    display: flex;
+    flex-grow: 1;
+    margin: 35px 50px 45px 50px;
+    padding: 15px 15px 15px 15px;
+    justify-content: center;
+    max-width: 450px;
+    background-color: #22577E;
+    height: 25%;
+}
+
+.GameContainer .AnswerButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 30%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.resultBar {
+    flex-grow: 1;
+    position: relative;
+}

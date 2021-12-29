@@ -14,7 +14,7 @@ const OptionsMenu = ({ setFlagFilters, flagFilters, setCanPlay }) => {
         <div id="checkboxes">
             <CheckboxOption
                 type='letter'
-                isChecked={true}
+                isChecked={ true }
                 addFilterOption={ addFilterOption }
                 removeFilterOption={ removeFilterOption }
                 setFlagFilters={ setFlagFilters }
@@ -24,7 +24,7 @@ const OptionsMenu = ({ setFlagFilters, flagFilters, setCanPlay }) => {
             />
             <CheckboxOption
                 type='number'
-                isChecked={true}
+                isChecked={ true }
                 addFilterOption={ addFilterOption }
                 removeFilterOption={ removeFilterOption }
                 setFlagFilters={ setFlagFilters }
@@ -34,7 +34,7 @@ const OptionsMenu = ({ setFlagFilters, flagFilters, setCanPlay }) => {
             />
             <CheckboxOption
                 type='sweLetter'
-                isChecked={true}
+                isChecked={ false }
                 addFilterOption={ addFilterOption }
                 removeFilterOption={ removeFilterOption }
                 setFlagFilters={ setFlagFilters }

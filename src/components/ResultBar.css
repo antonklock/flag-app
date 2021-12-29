@@ -1,0 +1,28 @@
+.answerResultsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vw;
+    max-width: 300px;
+}
+
+.answerResultsContainer .answerResultsBox {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    overflow: hidden;
+    width: 45vw;
+    max-width: 150px;
+    position: relative;
+}
+
+.answerResultsContainer:after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 90%);
+    width: 40%;
+    height: 100%;
+}

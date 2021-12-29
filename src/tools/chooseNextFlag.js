@@ -10,7 +10,6 @@ const chooseNextFlag = ( flags, currentFlag) => {
         return () => {
             let newFlag; 
             do{
-                console.log(flags.length);
                 newFlag = flags[Math.floor(Math.random() * flags.length)];
             }while (newFlag.flagName === currentFlag)
             return newFlag;

@@ -1,4 +1,5 @@
 import { chooseNextFlag, wrongGuessFlags } from '../tools/chooseNextFlag';
+import addIcon from './addIcon';
 
 const handleGuess = (
     alternatives,
@@ -8,10 +9,13 @@ const handleGuess = (
     setShowCorrectGuess,
     isButtonDisabled,
     setIsButtonDisabled,
-    filteredFlags
+    filteredFlags,
+    setAnswerResults,
+    answerResults
     ) => {
     if(alternative === flagName){
         setShowCorrectGuess(true);
+        setAnswerResults([...answerResults, addIcon(true)]);
         setTimeout(() => {
             setFlagDisplay(chooseNextFlag(filteredFlags, flagName));
             setShowCorrectGuess(false);
@@ -23,6 +27,7 @@ const handleGuess = (
         if(wrongGuessFlags.length < 3){
             wrongGuessFlags.push(flagName);
         }
+        setAnswerResults([...answerResults, addIcon(false)]);
     }
 }
 

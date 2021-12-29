@@ -1,4 +1,5 @@
 import '../components/FlagDisplay.css';
+import { Typography } from '@mui/material';
 
 const FlagDisplay = ({ flag, showCorrectGuess }) => {
     return (
@@ -6,7 +7,9 @@ const FlagDisplay = ({ flag, showCorrectGuess }) => {
             <div className="CorrectAnswerWrapper">
                 {showCorrectGuess ? 
                     <div className="CorrectAnswerBanner">
-                        <h1 className="CorrectAnswerText">{flag.flagName}</h1>
+                        <Typography variant="h3" className="CorrectAnswerText">
+                            {flag.flagName}
+                        </Typography>
                     </div>
                     :
                     <>
