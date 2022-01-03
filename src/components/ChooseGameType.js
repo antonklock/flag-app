@@ -12,7 +12,7 @@ const ChooseGameType = ({
     const [canPlay, setCanPlay] = useState(true);
 
     useEffect(() => {
-        setFlagFilters({type: ['letter', 'number', 'sweLetter']});
+        setFlagFilters({type: ['letter', 'number']});
     }, [setFlagFilters])
 
     return (

@@ -1,6 +1,6 @@
 import '../components/GameFoourButtons.css';
 import AnswerButtons from './AnswerButtons';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { chooseNextFlag } from '../tools/chooseNextFlag';
 import GameScore from './GameScore';
 import FlagDisplay from './FlagDisplay';
