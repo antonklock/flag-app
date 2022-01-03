@@ -9,6 +9,9 @@ const AnswerButtons = (props) => {
         if(compareStrings(guess, correctAnswer)){
             props.setShowCorrectGuess(true);
             props.setAnswerResults([...props.answerResults, addIcon(true)]);
+            props.setGameScore((prevState, props)=> {
+                return prevState + 100;
+            })
             setTimeout(() => {
                 props.setFlagDisplay(chooseNextFlag(props.filteredFlags, props.flagName));
                 props.setShowCorrectGuess(false);

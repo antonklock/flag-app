@@ -17,7 +17,7 @@ const TopBar = () => {
                 Flag App
             </Typography>
             <Button sx={{borderRadius: '50%'}}>
-                <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/150?img=5"/>
+                <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/150?img=22"/>
             </Button>
         </Box>
     );

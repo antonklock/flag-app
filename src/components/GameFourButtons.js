@@ -1,7 +1,8 @@
 import '../components/GameFoourButtons.css';
 import AnswerButtons from './AnswerButtons';
-import { Box, Button, Card, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { chooseNextFlag } from '../tools/chooseNextFlag';
+import GameScore from './GameScore';
 import FlagDisplay from './FlagDisplay';
 import flags from '../tools/flags';
 import { filterFlags } from '../tools/flagFilters';
@@ -14,7 +15,8 @@ const GameFourButtons = ({ setGameMode, flagFilters }) => {
     const [showCorrectGuess, setShowCorrectGuess] = useState(false);
     const [isButtonDisabled, setIsButtonDisabled] = useState([false, false, false, false]);
     const [answerResults, setAnswerResults] = useState([]);
-    const [gameScore, setGameScore] = useState([]);
+    const [gameScore, setGameScore] = useState(0);
+
     let filteredFlags = useRef(null);
     
     useEffect(() => {
@@ -44,19 +46,15 @@ const GameFourButtons = ({ setGameMode, flagFilters }) => {
                 }}>
                 Exit
             </Button>
-            <Card className="flagDisplayContainer">
+            <Box className="flagDisplayContainer">
                 <FlagDisplay
                     flag={ flagDisplay }
                     showCorrectGuess={ showCorrectGuess }
                 />
-            </Card>
+            </Box>
+            <GameScore gameScore={ gameScore }/>
             <Box className="resultBar">
                 <ResultBar answerResults={ answerResults } />
-            </Box>
-            <Box>
-                <Typography>
-                    Score: 1325
-                </Typography>
             </Box>
             <Box className="AnswerButtonContainer">
                 <AnswerButtons
