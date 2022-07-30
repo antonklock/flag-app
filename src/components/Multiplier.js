@@ -1,18 +1,17 @@
-import { Typography } from '@mui/material';
-
-const GameScore = ({ gameScore }) => {
+const Multiplier = ({ multiplier }) => {
     return (
         <p style={style}>
-            { gameScore }
+        x{ multiplier } 
         </p>
     )
 }
 
-export default GameScore;
+export default Multiplier;
 
 const style = {
-    fontSize: '3.5rem',
+    fontSize: '2.5rem',
     fontWeight: '1000',
     color: '#ffd600',
     textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)',
+    marginTop: '0px',
 }

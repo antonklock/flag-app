@@ -1,19 +1,19 @@
 .GameContainer {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    margin-top: 5%;
+    align-items: center; */
 }
 
 .GameContainer .flagDisplayContainer {
     display: flex;
-    flex-grow: 1;
-    margin: 35px 50px 45px 50px;
+    margin: 0px 50px 45px 50px;
     padding: 15px 15px 15px 15px;
     justify-content: center;
     max-width: 450px;
-    height: 25%;
+    height: 35%;
+    background-color: #F5F5F5;
+    border-radius: 20px;
 }
 
 .GameContainer .AnswerButtonContainer {
@@ -26,6 +26,7 @@
     max-width: 500px;
     margin-bottom: 20px;
     flex-grow: 1;
+    border-radius: 20px;
 }
 
 .gameScore{

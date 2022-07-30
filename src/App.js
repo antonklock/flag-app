@@ -3,6 +3,7 @@ import { useState } from 'react';
 import ChooseGameType from './components/ChooseGameType';
 import GameFourButtons from './components/GameFourButtons';
 import TopBar from './components/TopBar';
+import { withTheme } from '@emotion/react';
 
 function App() {
   const [gameMode, setGameMode] = useState('none');
@@ -23,10 +24,16 @@ function App() {
 
   return (
     <div className="App">
-      <TopBar />
+      <h1 style={titleStyle}>The Flag Game</h1>
       { gameComponent() }
     </div>
   );
+}
+
+const titleStyle = {
+  marginTop: '50px',
+  color: '#fff',
+  fontSize: '5rem',
 }
 
 export default App;
