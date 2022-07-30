@@ -1,6 +1,6 @@
 import OptionsMenu from "./OptionsMenu";
 import { useState, useEffect } from 'react';
-import { Typography, Button, Card } from '@mui/material';
+import { Button, Card } from '@mui/material';
 import '../components/ChooseGameType.css'
 
 
@@ -17,30 +17,30 @@ const ChooseGameType = ({
 
     return (
         <>
-            <Card className="chooseGameTypeCarousel">
-                <Button>{'<'}</Button>
-                    <Typography variant="body1">Four alternatives</Typography>
-                <Button>{'>'}</Button>
-            </Card>
-            <Card>
+            <Card class="bgCard">
+                <h1>Start a new game</h1>
+                <div>
+                    <Button 
+                        variant="contained"
+                        disabled={!canPlay}
+                        onClick={() => {
+                        setGameMode('FourAlternatives');
+                        }}
+                    >
+                        Start Game
+                    </Button>
+                </div>
+                <hr Style="width:50px; color:#f7f7f7; margin-top:20px; drop-shadow: none"></hr>
+                <p>Choose the symbols you want to include</p>
                 <OptionsMenu
-                    setGameMode={ setGameMode }
-                    setFlagFilters={ setFlagFilters }
-                    flagFilters={ flagFilters }
-                    setCanPlay={ setCanPlay }
-                />
+                        setGameMode={ setGameMode }
+                        setFlagFilters={ setFlagFilters }
+                        flagFilters={ flagFilters }
+                        setCanPlay={ setCanPlay }
+                    />
+                
             </Card>
-            <div>
-                <Button 
-                    variant="contained"
-                    disabled={!canPlay}
-                    onClick={() => {
-                    setGameMode('FourAlternatives');
-                    }}
-                >
-                    Start Game
-                </Button>
-            </div>
+            
         </>
     );
 }

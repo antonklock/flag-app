@@ -1,6 +1,6 @@
 import '../components/GameFoourButtons.css';
 import AnswerButtons from './AnswerButtons';
-import { Box, Button } from '@mui/material';
+import { Card, Box, Button } from '@mui/material';
 import { chooseNextFlag } from '../tools/chooseNextFlag';
 import GameScore from './GameScore';
 import FlagDisplay from './FlagDisplay';
@@ -38,24 +38,30 @@ const GameFourButtons = ({ setGameMode, flagFilters }) => {
     }, [flagDisplay]);
 
     return (
-        <Box className="GameContainer">
-            <Button 
+        <Card className="GameContainer">
+            <div className="exitButtonContainer">
+                <Button 
+                className="exitButton"
                 variant="outlined" 
                 onClick={() =>{
                     setGameMode('none');
                 }}>
-                Exit
-            </Button>
+                    X
+                </Button>
+            </div>
+            <div className="gameScore">
+                <GameScore gameScore={gameScore} />
+            </div>
             <Box className="flagDisplayContainer">
                 <FlagDisplay
                     flag={ flagDisplay }
                     showCorrectGuess={ showCorrectGuess }
                 />
             </Box>
-            <GameScore gameScore={ gameScore }/>
             <Box className="resultBar">
                 <ResultBar answerResults={ answerResults } />
             </Box>
+            
             <Box className="AnswerButtonContainer">
                 <AnswerButtons
                     alternatives={ alternatives }
@@ -71,7 +77,7 @@ const GameFourButtons = ({ setGameMode, flagFilters }) => {
                     setGameScore={ setGameScore }
                 />
             </Box>
-        </Box>
+        </Card>
     )
 }
 

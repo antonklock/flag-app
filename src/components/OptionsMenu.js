@@ -13,6 +13,7 @@ const OptionsMenu = ({ setFlagFilters, flagFilters, setCanPlay }) => {
     return (
         <div id="checkboxes">
             <CheckboxOption
+                name='Letters'
                 type='letter'
                 isChecked={ true }
                 addFilterOption={ addFilterOption }
@@ -23,6 +24,7 @@ const OptionsMenu = ({ setFlagFilters, flagFilters, setCanPlay }) => {
                 setCanPlay={ setCanPlay }
             />
             <CheckboxOption
+                name='Numbers'
                 type='number'
                 isChecked={ true }
                 addFilterOption={ addFilterOption }
@@ -33,6 +35,7 @@ const OptionsMenu = ({ setFlagFilters, flagFilters, setCanPlay }) => {
                 setCanPlay={ setCanPlay }
             />
             <CheckboxOption
+                name='Swedish letters'
                 type='sweLetter'
                 isChecked={ false }
                 addFilterOption={ addFilterOption }

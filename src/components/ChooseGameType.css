@@ -4,3 +4,18 @@
     align-items: center;
     margin: 15px 0px 15px 0px;
 }
+
+.App {
+    background: rgb(45, 49, 61);
+}
+
+.bgCard{
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

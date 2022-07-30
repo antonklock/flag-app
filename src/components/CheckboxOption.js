@@ -8,7 +8,8 @@ const CheckboxOption = ({
     setFlagFilters,
     flagFilters,
     checkAmountOfFlagGroups,
-    setCanPlay
+    setCanPlay,
+    name
  }) => {
     return (
         <div>
@@ -30,7 +31,7 @@ const CheckboxOption = ({
                 />
                 <label htmlFor={ type }>
                     <Typography variant="subtitle">
-                        { type }
+                        { name }
                     </Typography>    
                 </label>
         </div>

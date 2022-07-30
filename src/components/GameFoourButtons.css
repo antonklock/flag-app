@@ -3,8 +3,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    margin-top: 5%;
 }
 
 .GameContainer .flagDisplayContainer {
@@ -14,7 +13,6 @@
     padding: 15px 15px 15px 15px;
     justify-content: center;
     max-width: 450px;
-    /* background-color: #22577E; */
     height: 25%;
 }
 
@@ -30,7 +28,23 @@
     flex-grow: 1;
 }
 
+.gameScore{
+    /* margin: 10px; */
+}
+
 .resultBar {
     flex-grow: 1;
     position: relative;
+}
+
+.exitButtonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.exitButton{
+    margin: 10px;
+    padding: 10px;
+    background-color: red;
 }
